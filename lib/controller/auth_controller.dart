@@ -29,6 +29,7 @@ class AuthController extends GetxController {
   void signOut() {
     _isSignedIn.value = false;
     Get.snackbar('Success', 'Signed out successfully');
+    Get.off(SignIn());
   }
 
   void clearUser() {
