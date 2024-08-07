@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:test/model/user_model.dart';
 import 'package:test/view/dashboard.dart';
+import 'package:test/view/sign_in.dart';
 
 class AuthController extends GetxController {
   final Rx<User?> _user = Rx<User?>(null);
@@ -11,6 +12,8 @@ class AuthController extends GetxController {
 
   void createUser(String id, String name, String email, String password) {
     _user.value = User(id: id, name: name, email: email, password: password);
+    Get.snackbar("Success", "User Created Successfully");
+    Get.to(SignIn());
   }
 
   void signIn(String email, String password) {
