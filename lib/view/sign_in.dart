@@ -13,13 +13,22 @@ class SignIn extends StatelessWidget {
     final passController = TextEditingController();
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Sign In')),
+      // appBar: AppBar(title: const Text('Sign In')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
           key: _formKey,
           child: Column(
             children: [
+              const SizedBox(height:70),
+              ClipRRect(
+            borderRadius: BorderRadius.circular(100),
+            child: Image.asset(
+              'assets/logo.png',
+              fit: BoxFit.cover,
+            ),
+          ),
+          const SizedBox(height: 10),
               textField(
                 "Email Id",
                 controller: emailController,
@@ -49,6 +58,7 @@ class SignIn extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               ElevatedButton(
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.green[100]),
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     controller.signIn(
@@ -100,6 +110,7 @@ class SignIn extends StatelessWidget {
     return ElevatedButton(
       onPressed: () {},
       style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.green[100],
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
         ),
@@ -117,7 +128,7 @@ class SignIn extends StatelessWidget {
         validator: validator,
         decoration: InputDecoration(
           labelText: label,
-          border: const OutlineInputBorder(),
+          border: const OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(25))),
         ),
       ),
     );

@@ -20,11 +20,14 @@ class _MyAppState extends State<MyApp> {
   final AuthController authController = Get.put(AuthController());
 
   bool userLoggedIn = false;
+  var username;
 
   Future<void> checkToken() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
 
-    String? username = prefs.getString('username');
+    username = prefs.getString('userName');
+    setState(() {});
+    print(username);
 
     if (username != null) {
       userLoggedIn = true;
@@ -53,7 +56,9 @@ class _MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: userLoggedIn ? DashboardScreen(name: "",) : SignIn(), //SignIn(),
+      home: userLoggedIn
+          ? DashboardScreen(name: username.toString())
+          : SignIn(), //SignIn(),
     );
   }
 }

@@ -13,8 +13,8 @@ class HorizontalImageList extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: Image.network(
-                'https://picsum.photos/200',
+              child: Image.asset(
+                'assets/logo.png',
                 width: 100,
                 height: 100,
                 fit: BoxFit.cover,

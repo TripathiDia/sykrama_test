@@ -35,15 +35,25 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Sign Up')),
+      //appBar: AppBar(title: const Text('Sign Up')),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Form(
             key: _formKey,
             child: Column(
+
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                const SizedBox(height:70),
+                ClipRRect(
+            borderRadius: BorderRadius.circular(100),
+            child: Image.asset(
+              'assets/logo.png',
+              fit: BoxFit.cover,
+            ),
+          ),
+          SizedBox(height:20),
                 textField(
                   "Name",
                   controller: nameController,
@@ -116,8 +126,9 @@ class _SignUpState extends State<SignUp> {
                 ),
                 const SizedBox(height: 30),
                 ElevatedButton(
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.green[100]),
                   onPressed: _submit,
-                  child: const Text('Create User'),
+                  child: const Text('Create Account'),
                 ),
               ],
             ),
@@ -137,7 +148,7 @@ class _SignUpState extends State<SignUp> {
         validator: validator,
         decoration: InputDecoration(
           hintText: hintText,
-          border: const OutlineInputBorder(),
+          border: const OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(25))),
         ),
       ),
     );
