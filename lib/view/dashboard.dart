@@ -6,6 +6,15 @@ import 'package:test/view/horizontal_image_list.dart';
 import 'package:test/view/vertical_image_list.dart';
 
 class DashboardScreen extends StatelessWidget {
+  String? name;
+
+
+   DashboardScreen({
+    Key ? key,
+    required this.name,
+  }) : super(key: key);
+
+  
   @override
   Widget build(BuildContext context) {
     final AuthController authController = Get.put(AuthController());
@@ -13,7 +22,7 @@ class DashboardScreen extends StatelessWidget {
     return Scaffold(
       drawer: const Drawer(),
       appBar: AppBar(
-        title: const Text('Dashboard'),
+        title: Text('Wecome, ${name}'),
         actions: [
           TextButton(
             child: const Text("Logout"),

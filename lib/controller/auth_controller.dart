@@ -22,7 +22,7 @@ class AuthController extends GetxController {
     if (_user.value != null && _user.value!.email == email && _user.value!.password == password) {
       _isSignedIn.value = true;
       Get.snackbar('Success', 'Signed in successfully');
-      Get.off(DashboardScreen());
+      Get.off(DashboardScreen(name:_user.value!.name));
       await _saveUserSession(_user.value!);
     } else {
       Get.snackbar('Error', 'Invalid credentials');
