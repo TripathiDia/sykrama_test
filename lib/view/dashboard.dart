@@ -11,8 +11,9 @@ class DashboardScreen extends StatelessWidget {
     final AuthController authController = Get.put(AuthController());
 
     return Scaffold(
+      drawer: const Drawer(),
       appBar: AppBar(
-        title: const Text('Welcome, '),
+        title: const Text('Dashboard'),
         actions: [
           TextButton(
             child: const Text("Logout"),
@@ -37,7 +38,7 @@ class DashboardScreen extends StatelessWidget {
             ),
             VerticalImageList(),
             const Padding(
-              padding:  EdgeInsets.all(16.0),
+              padding: EdgeInsets.all(16.0),
               child: Text('Grid View',
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
             ),
