@@ -12,7 +12,7 @@ class VerticalImageList extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(10),
-            child: Image.asset(
+            child: Image.network(
               'https://picsum.photos/400/200',
               height: 200,
               width: double.infinity,
